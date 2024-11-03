@@ -14,6 +14,17 @@ fun main() {
     println("4. $result3")
 
     functionWithDefaultParameter() // no parameter -> default value
+
+    functionWithVararg("Foo", "Bar", "Baz")
+    functionWithVarargAndDefaultParameter("Foo", "Bar", "Baz")
+    functionWithVarargAndDefaultParameter(text = "FooBarBaz") // named parameter usage
+
+    functionWithLambda(text, { it.uppercase() })
+
+    functionWithLambda(text) {// trailing lambda as parameter
+        it.uppercase()
+    }
+
 }
 
 fun simpleFunction(text: String) {
@@ -31,3 +42,17 @@ fun simpleFunctionWithExpressionBodyAndTypeInference(text: String) = "Hello, $te
 fun functionWithDefaultParameter(text: String = "World") {
     println("5. Hello, $text!")
 }
+
+fun functionWithVararg(vararg texts: String) {
+    println("6. Hello, ${texts.joinToString()}!")
+}
+
+fun functionWithVarargAndDefaultParameter(vararg texts: String, text: String = "World") {
+    println("7. Hello, ${texts.joinToString()} and $text!")
+}
+
+// function that takes functional type as a parameter
+fun functionWithLambda(text: String, block: (String) -> String) {
+    println("8. Hello, ${block(text)}!")
+}
+
