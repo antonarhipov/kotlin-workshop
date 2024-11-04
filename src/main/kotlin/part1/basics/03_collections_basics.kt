@@ -11,6 +11,7 @@ fun main() {
     maps()
 }
 
+//region Lists
 private fun lists() {
     val readOnlyShapes = listOf("triangle", "square", "circle")
     println(readOnlyShapes)
@@ -47,7 +48,9 @@ private fun lists() {
         println(shape)
     }
 }
+//endregion
 
+//region Sets
 private fun sets() {
     // Read-only set
     val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
@@ -68,7 +71,9 @@ private fun sets() {
     println("This set has ${readOnlyFruit.count()} items")
 
 }
+//endregion
 
+//region Maps
 private fun maps() {
     // Read-only map
     val readOnlyJuiceMenu = mapOf("apple" to 100, "kiwi" to 190, "orange" to 100)
@@ -104,3 +109,4 @@ private fun maps() {
 
 
 }
+//endregion

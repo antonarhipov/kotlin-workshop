@@ -5,7 +5,7 @@ fun main() {
     println("H1e2l3l4o5!".filteredString)
 }
 
-// extension function
+// region extension function
 fun String.filteredString(): String {
     // this implementation for demonstration purpose only
     // filter { it.isLetter() } is more idiomatic
@@ -17,14 +17,16 @@ fun String.filteredString(): String {
 
     return result
 }
+//endregion
 
-// extension property
+// region extension property
 val String.filteredString: String
     get() = filter { it.isLetter() }
+//endregion
 
-
-// functional literal with receiver
+// region functional literal with receiver
 // this is useful for creating DSLs
 val literal: String.() -> Unit = {
     println(this)
 }
+//endregion

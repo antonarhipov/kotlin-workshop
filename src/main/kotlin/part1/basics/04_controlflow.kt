@@ -15,6 +15,7 @@ fun main() {
     whenExpression()
 }
 
+//region Expressions
 private fun ifExpression(random: Int): String {
     val result = if (random > 5) {
         "random is greater than 5: $random"
@@ -58,8 +59,10 @@ fun whenExpression(random: Int = Random.nextInt(10)) {
         else -> println("random is neither 1 nor 2")
     }
 }
+//endregion
 
-// NB! iteration is O.K
+//region Loops
+// NB! Looping/iteration is O.K
 // But as soon as you need to mutate state or calculate something, consider standard library alternatives
 fun loops(list: List<String>){
     for (item in list) {
@@ -85,5 +88,5 @@ fun loops(list: List<String>){
     // rangeUntil operator
     for (i in 1 until 10) println(i)
     for (i in 1 ..< 10) println(i)
-
 }
+//endregion
